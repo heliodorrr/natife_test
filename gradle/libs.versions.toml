@@ -1,0 +1,56 @@
+[versions]
+dagger2ver = "2.48.1"
+kotlinVer = "1.9.0"
+agp = "8.1.2"
+ksp = "1.9.0-1.0.12"
+
+[libraries]
+desugaring = { module = "com.android.tools:desugar_jdk_libs", version = "2.0.3" }
+coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+
+glide = "com.github.bumptech.glide:glide:4.16.0"
+paging = "androidx.paging:paging-runtime:3.2.1"
+retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.11.0"
+kotlinxSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+retrofitKotlinxSerializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
+
+apdaterDelegates = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2"
+apdaterDelegatesVB = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2"
+
+dagger2 = { module = "com.google.dagger:dagger", version.ref = "dagger2ver" }
+dagger2Compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger2ver" }
+
+coreKtx = "androidx.core:core-ktx:1.12.0"
+collectionsKtx = "androidx.collection:collection-ktx:1.3.0"
+fragmentKtx = "androidx.fragment:fragment-ktx:1.6.1"
+lifecycleKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
+liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
+
+
+navRuntime =  "androidx.navigation:navigation-runtime-ktx:2.7.4"
+navFragment = "androidx.navigation:navigation-fragment-ktx:2.7.4"
+navUi =  "androidx.navigation:navigation-ui-ktx:2.7.4"
+
+appCompat = "androidx.appcompat:appcompat:1.6.1"
+material = "com.google.android.material:material:1.10.0"
+
+agp = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kgp = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVer" }
+ksp = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+[bundles]
+adapterDelegatesBundle = [ "apdaterDelegates",  "apdaterDelegatesVB" ]
+
+navigation = [ "navFragment", "navRuntime", "navUi" ]
+ktx = [ "coreKtx", "collectionsKtx", "fragmentKtx", "lifecycleKtx", "liveDataKtx" ]
+
+
+[plugins]
+kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVer" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+application = { id = "com.android.application", version.ref = "agp" }
+library = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVer" }
+
